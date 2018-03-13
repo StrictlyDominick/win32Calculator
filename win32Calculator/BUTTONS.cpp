@@ -1416,7 +1416,7 @@ bool BUTTONS::CLICKED::MathOperator(int buttonID)
 	return true;
 }
 
-bool Equal()
+bool BUTTONS::CLICKED::Equal()
 {
 
 
