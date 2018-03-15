@@ -34,6 +34,11 @@
 		 MathOperator function in BUTTONS::CLICKED needs to check the
 		 the value of 'buttonID'; currently, entering any int will cause
 		 the function to return true. This is not how it should be.
+		-3-15-2018 6:35am
+		 Implement a limit to how long the equation can get in ID_EDIT
+		 ID_EDIT can't exceed the size of its container. Also allows 
+		 assumptions on the maximum size of the string contained in
+		 the text field.
 
 **********************************************************************/
 
