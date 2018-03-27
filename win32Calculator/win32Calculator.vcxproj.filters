@@ -21,6 +21,9 @@
     <ClCompile Include="BUTTONS.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="MathParser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BUTTONS.h">
@@ -33,6 +36,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="resource1.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="MathParser.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

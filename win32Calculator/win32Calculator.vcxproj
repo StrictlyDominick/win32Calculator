@@ -116,11 +116,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="BUTTONS.cpp" />
+    <ClCompile Include="MathParser.cpp" />
     <ClCompile Include="win32Calculator.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BUTTONS.h" />
     <ClInclude Include="ControlIDDefines.h" />
+    <ClInclude Include="MathParser.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="resource1.h" />
   </ItemGroup>
