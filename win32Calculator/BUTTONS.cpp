@@ -1418,7 +1418,30 @@ bool BUTTONS::CLICKED::MathOperator(int buttonID)
 
 bool BUTTONS::CLICKED::Equal()
 {
+	//Retrieves ID_STATIC handle
+	HWND staticHandle = GetDlgItem(parentClass.getparentHwnd(), ID_STATIC);
 
+	//Declare constant for length of ID_STATIC text
+	const int staticTextSize = GetWindowTextLength(staticHandle);
+
+	//Retrieves ID_EDIT handle
+	HWND editHandle = GetDlgItem(parentClass.getparentHwnd(), ID_EDIT);
+
+	//Declares constant int for length of ID_EDIT text
+	const int editTextSize = GetWindowTextLength(editHandle);
+
+	//Dynamically creates LPSTR for ID_STATIC
+	LPSTR staticText = new char[staticTextSize];
+
+	//Fills the text string with value from ID_Static
+	GetWindowText(staticHandle, staticText, staticTextSize);
+
+	//Dynamically creates LPSTR for ID_EDIT
+	LPSTR editText = new char[editTextSize];
+
+
+	delete staticText[];
+	delete editText[];
 
 	return true;
 }
