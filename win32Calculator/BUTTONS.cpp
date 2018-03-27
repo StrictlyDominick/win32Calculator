@@ -1419,6 +1419,7 @@ bool BUTTONS::CLICKED::MathOperator(int buttonID)
 bool BUTTONS::CLICKED::Equal()
 {
 
+
 	return true;
 }
 
@@ -1455,9 +1456,14 @@ xyButton BUTTONS::getButtonDimensions(HWND parentHandle, LPCSTR windowName) cons
 	return button;
 }
 
-//-----------------------------------
-//----------GET FUCNTIONS------------
-//-----------------------------------
+//---------------------------------------
+//---------------------------------------
+//Get Functions: Contains only a single
+//	line of code returning the value. All
+//	get functions more complex must be
+//	commented separately.
+//---------------------------------------
+//---------------------------------------
 HWND BUTTONS::getparentHwnd() const
 {
 	return parentHwnd;
@@ -1568,9 +1574,14 @@ int BUTTONS::getiLastButtontClicked() const
 	return iLastButtonClicked;
 }
 
-//-----------------------------------
-//----------SET FUCNTIONS------------
-//-----------------------------------
+//---------------------------------------
+//---------------------------------------
+//Set Functions: Contains only a single
+//	line of code setting the value. All
+//	set functions more complex must be
+//	commented separately.
+//---------------------------------------
+//---------------------------------------
 void BUTTONS::setparentHwnd(HWND theParentHandle)
 {
 	parentHwnd = theParentHandle;
