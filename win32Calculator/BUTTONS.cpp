@@ -5,6 +5,10 @@
 **********************************************************************/
 #include "BUTTONS.h"
 
+
+//=====================================
+//============	CREATE  ===============
+//=====================================
 bool BUTTONS::CREATE::All(HWND parenthwnd)
 {
 	//Created the position reference button (ID_BUTTONEQUAL). All
@@ -342,7 +346,6 @@ bool BUTTONS::CREATE::Button5(HWND parenthwnd)
 	//Exit function with success
 	return true;
 }
-
 bool BUTTONS::CREATE::Button6(HWND parenthwnd)
 {
 	//------Variable Decelerations------
@@ -997,6 +1000,10 @@ bool BUTTONS::CREATE::ButtonRPARENTHESIS(HWND parenthwnd)
 	return true;
 }
 
+
+//=====================================
+//===========   CLICKED  ==============
+//=====================================
 bool BUTTONS::CLICKED::Numbers(int buttonID)
 {
 	//resets focus the parent window to ensure keyboard input works
@@ -1440,8 +1447,8 @@ bool BUTTONS::CLICKED::Equal()
 	LPSTR editText = new char[editTextSize];
 
 
-	delete staticText[];
-	delete editText[];
+	delete [] staticText;
+	delete [] editText;
 
 	return true;
 }
