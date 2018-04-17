@@ -13,6 +13,8 @@ public:
 	bool extractAllNumbers(char* textToExtract, int* intArray, int textLength, int intLength) const;
 
 	int countNumbers(char* text, int textLength) const;
+
+	bool isNum(char character) const;
 private:
 
 };
