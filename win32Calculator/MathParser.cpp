@@ -12,24 +12,24 @@ bool MATHPARSER::extractAllNumbers(char* textToExtract, int* intArray, int textL
 	return true;
 }
 
-int MATHPARSER::countNumbers(char* text, int textLength) const
+int MATHPARSER::countNumbers(char* text, int textLength, char delimiter = '/0') const
 {
 	//Stores the amount of number hits from 'text'
 	int count;
-	bool isNum = false;
+	int StartEndNumber[2] = { 0,0 };
 
 	//First loop for searching array
-	for (int i = 1; i <= textLength; i++)
+	for (int i = 0; i <= textLength; i++)
 	{
-
-
-		if (isNum == false)
+		if (isNum(text[i]))
 		{
-			if (text[i - 1] == ' ')
-			{
 
-			}
 		}
+		else if (text[i] == delimiter)
+		{
+
+		}
+
 	}
 
 	return count;
