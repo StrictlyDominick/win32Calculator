@@ -246,6 +246,12 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT message, WPARAM wParam, LPARAM lParam)
 				Button.Clicked.MathOperator(LOWORD(wParam));
 
 			}
+			else if (LOWORD(wParam) == 219)
+			{
+				//Button ID 219 is ID_BUTTONEQUAL call ID_BUTTONEQUAL
+				//execution code
+				Button.Clicked.Equal();
+			}
 		}
 		return 0;
 	}
