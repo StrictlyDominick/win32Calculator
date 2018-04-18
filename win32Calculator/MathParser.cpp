@@ -12,32 +12,59 @@ bool MATHPARSER::extractAllNumbers(char* textToExtract, int* intArray, int textL
 	return true;
 }
 
-int MATHPARSER::countNumbers(char* text, int textLength, char delimiter = '/0') const
+int MATHPARSER::countNumbers(const char* text, int textLength, bool delimited) const
 {
 	//Stores the amount of number hits from 'text'
-	int count;
-	int StartEndNumber[2] = { 0,0 };
+	int count = 0;
 
-	//First loop for searching array
-	for (int i = 0; i <= textLength; i++)
+	//If delimiter is true it will count consecutive numbers as a single number.
+	//For example "121d32sde" will count as 2 numbers; without delimiter
+	//enabled "121d32sde" will count as 5 numbers
+	if (delimited == true)
 	{
-		if (isNum(text[i]))
+		//Will loop through each element in array. Each time checking
+		//if its a number or not and incrementing 'count' as appropriate
+		for (int i = 1; i <= textLength; i++)
 		{
 
+			//Loop works by always finding the non-number char.
+			if (!isNum(text[i]))
+			{
+				//Once the non-number char is found you need to check
+				//if the previous char was a number; happens if there
+				//is a consecutive string of numbers such as "1234a".
+				if (isNum(text[i - 1]))
+				{
+					//increment count
+					count++;
+				}
+			}
+
 		}
-		else if (text[i] == delimiter)
+	}
+	else
+	{
+		//Loop for incrementing through array elements. Will check each
+		//char element for a number and count if true
+		for (int i = 0; i <= textLength; i++)
 		{
-
+			//When array element is a number it counts toward total number count
+			if (isNum(text[i]))
+			{
+				//increment count
+				count++;
+			}
 		}
-
 	}
 
+	//Return the tallied number of number char's found
 	return count;
 }
 
 bool MATHPARSER::isNum(char character) const
 {
-	switch (character])
+	//Checks all possible number char values against char
+	switch (character)
 	{
 
 	case '0':
