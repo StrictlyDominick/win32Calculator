@@ -9,6 +9,7 @@
 
 #include <Windows.h>
 #include "ControlIDDefines.h"
+#include "MathParser.h"
 
 struct xyButton { int x; int y; int width; int height; };
 
