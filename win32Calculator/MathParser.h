@@ -12,7 +12,7 @@ class MATHPARSER
 public:
 	bool extractAllNumbers(char* textToExtract, int* intArray, int textLength, int intLength) const;
 
-	int countNumbers(char* text, int textLength, char delimiter = '/0') const;
+	int countNumbers(const char* text, int textLength, bool delimited = false) const;
 
 	bool isNum(char character) const;
 private:
