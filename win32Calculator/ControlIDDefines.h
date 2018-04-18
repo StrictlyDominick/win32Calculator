@@ -11,6 +11,7 @@
 
 //static boxes are 300 range
 #define ID_STATIC 300
+
 //buttons are 200 range
 #define ID_BUTTON0 200
 #define ID_BUTTON1 201
