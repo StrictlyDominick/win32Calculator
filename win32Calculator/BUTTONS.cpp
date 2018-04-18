@@ -1440,11 +1440,15 @@ bool BUTTONS::CLICKED::Equal()
 	//Dynamically creates LPSTR for ID_STATIC
 	LPSTR staticText = new char[staticTextSize];
 
-	//Fills the text string with value from ID_Static
+	//Fills 'staticHandle' with value from ID_Static
 	GetWindowText(staticHandle, staticText, staticTextSize);
 
 	//Dynamically creates LPSTR for ID_EDIT
 	LPSTR editText = new char[editTextSize];
+
+	//Declares MATHPASER object for extracting math operators
+	//and numbers from char strings
+	MATHPARSER mathParser;
 
 
 	delete [] staticText;
