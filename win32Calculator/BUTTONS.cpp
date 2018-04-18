@@ -1449,7 +1449,10 @@ bool BUTTONS::CLICKED::Equal()
 	//Declares MATHPASER object for extracting math operators
 	//and numbers from char strings
 	MATHPARSER mathParser;
+	char temp[9] = { '1','2','t','3','4','d','2','s','2' };
+	//temp[7] = 6;
 
+	int counter = mathParser.countNumbers(temp, 9, true);
 
 	delete [] staticText;
 	delete [] editText;
