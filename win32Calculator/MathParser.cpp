@@ -5,18 +5,104 @@
 **********************************************************************/
 
 #include "MathParser.h"
+#include <stdlib.h>
 
-int* MATHPARSER::extractAllNumbers(char* textToExtract, int* intArray, int textLength, int intLength) const
+int* MATHPARSER::extractAllNumbers(char* textToExtract, int textLength) const
 {
+	//Retrieve amount of numbers in 'textToExtract'
+	const int AMOUNTOFNUMS = countNumbers(textToExtract, textLength);
 
-	return true;
+	//Dynamically creates pointer of size 'AMOUNTOFNUMS' for storing all numbers
+	int* workingSetNums = new int[AMOUNTOFNUMS];
+
+	//int array to store first and last position in string containing a number
+	int iPosition[2] = { -1,-1 };
+
+	//a temp char string for storing the number as a string before converting to int
+	char tempString[10];
+
+	//integer for keeping track of how many integers was placed in 'workingSetNums'
+	int iUsed = 0;
+
+	//Loop for iterating through array. Finding all the numbers and extracting them
+	//into workingSetNums in left to right order.
+	for (int i = 0; i < textLength; i++)
+	{
+		//when current position, 'i', is a number and a starting position has not
+		//been set than current position becomes starting position of new number.
+		//Starting position also occurs when a negative number is present. If 
+		//current position, 'i', is a '-' char while also followed by a number
+		//than current position becomes starting position of new number.
+		if ((isNum(textToExtract[i]) & (iPosition[0] == -1)) ||
+			((textToExtract[i] == '-') & (isNum(textToExtract[i+1]))))
+		{
+			//stores the first position of number in string 'textToExtract'
+			iPosition[0] = i;
+		}
+		//The last position of a number occurs when there is no longer a number after
+		//the starting position is set.
+		else if (!isNum(textToExtract[i]) & iPosition[0] != -1)
+		{
+			iPosition[1] = i;
+
+			//fill loop to fill 'tempString' with number from 'textToExtract'
+			for (int iTextPo = iPosition[0], iTempPo = 0; iTextPo <= iPosition[1]; iTextPo++, iTempPo++)
+			{
+				tempString[iTempPo] = textToExtract[iTextPo];
+			}
+
+			//add a null terminating string character to tempString
+			tempString[(iPosition[1] - iPosition[0]) + 1] = '\0';
+
+			//reset 'position' int values to default -1 value
+			iPosition[0] = -1;
+			iPosition[1] = -1;
+
+			//convert character string to integer
+			workingSetNums[iUsed] = atoi(tempString);
+
+			//defaults tempString
+			char tempString[] = { '+', '+', '+', '+', '+', '+', '+', '+', '+', '+' };
+
+			//increment 'used'
+			iUsed++;
+
+		}
+		else if ((i == textLength - 1) & isNum(textToExtract[i]))
+		{
+			iPosition[1] = i;
+
+			//fill loop to fill 'tempString' with number from 'textToExtract'
+			for (int textPo = iPosition[0], tempPo = 0; textPo <= iPosition[1]; textPo++, tempPo++)
+			{
+				tempString[tempPo] = textToExtract[textPo];
+			}
+
+			//add a null terminating string character to tempString
+			tempString[(iPosition[1] - iPosition[0]) + 1] = '\0';
+
+			//reset 'position' int values to default -1 value
+			iPosition[0] = -1;
+			iPosition[1] = -1;
+
+			//convert character string to integer
+			workingSetNums[iUsed] = atoi(tempString);
+
+			//defaults tempString
+			char tempString[] = { '+', '+', '+', '+', '+', '+', '+', '+', '+', '+' };
+
+			//increment 'used'
+			iUsed++;
+
+		}
+	}
+	return workingSetNums;
 }
 
 int MATHPARSER::countNumbers(char* text, int textLength, bool delimited) const
 {
 	//Stores the amount of number hits from 'text'
 	int count = 0;
-	char tempChar;
 
 	//If delimited is true it will count consecutive numbers as a single number.
 	//For example "121d32sde" will count as 2 numbers; without delimiter
@@ -39,6 +125,11 @@ int MATHPARSER::countNumbers(char* text, int textLength, bool delimited) const
 					//increment count
 					count++;
 				}
+			}
+			else if ((i == (textLength - 1)) & isNum(text[i]))
+			{
+				//increment 'count'
+				count++;
 			}
 
 		}
