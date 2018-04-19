@@ -1453,10 +1453,22 @@ bool BUTTONS::CLICKED::Equal()
 	//and numbers from char strings
 	MATHPARSER mathParser;
 
-	//Dynamically allocates array for storing all numbers to be calculated
-	int* workingSetNumbers = new int[mathParser.countNumbers(staticText, staticTextSize, true)];
+	//sets the how many numbers are contained in 'staticText'
+	const int iTotalNumbers = mathParser.countNumbers((char*)"1234o6k57ok34", 13, true);
 
-	delete[] workingSetNumbers;
+	//Dynamically allocates array for storing all numbers to be calculated
+	int* iWorkingSetNumbers = new int[iTotalNumbers];
+
+	iWorkingSetNumbers = mathParser.extractAllNumbers((char*)"1234o6k57ok34", 13);
+
+	int check = -1;
+
+	for (int i = 0; i < iTotalNumbers; i++)
+	{
+		check = iWorkingSetNumbers[i];
+	}
+
+	delete[] iWorkingSetNumbers;
 	delete [] staticText;
 	delete [] editText;
 
