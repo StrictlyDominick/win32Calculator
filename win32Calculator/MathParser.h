@@ -10,7 +10,7 @@
 class MATHPARSER
 {
 public:
-	bool extractAllNumbers(char* textToExtract, int* intArray, int textLength, int intLength) const;
+	int * extractAllNumbers(char* textToExtract, int* intArray, int textLength, int intLength) const;
 
 	//Count numbers contained in char string in two different ways depending on optional param.
 	//If "delimited" is true it will count consecutive numbers as a single number. For example
@@ -19,7 +19,7 @@ public:
 	//Postcondition:	Will return integer showing tallied amount of numbers contained in 
 	//					'text'. Return value will change depending on 'delimited' value.
 	//Precondition :	'textLength' must be the size of the array
-	int countNumbers(const char* text, int textLength, bool delimited = false) const;
+	int countNumbers(char* text, int textLength, bool delimited = false) const;
 
 	bool isNum(char character) const;
 private:
