@@ -6,30 +6,31 @@
 
 #include "MathParser.h"
 
-bool MATHPARSER::extractAllNumbers(char* textToExtract, int* intArray, int textLength, int intLength) const
+int* MATHPARSER::extractAllNumbers(char* textToExtract, int* intArray, int textLength, int intLength) const
 {
 
 	return true;
 }
 
-int MATHPARSER::countNumbers(const char* text, int textLength, bool delimited) const
+int MATHPARSER::countNumbers(char* text, int textLength, bool delimited) const
 {
 	//Stores the amount of number hits from 'text'
 	int count = 0;
+	char tempChar;
 
-	//If delimiter is true it will count consecutive numbers as a single number.
+	//If delimited is true it will count consecutive numbers as a single number.
 	//For example "121d32sde" will count as 2 numbers; without delimiter
 	//enabled "121d32sde" will count as 5 numbers
 	if (delimited == true)
 	{
 		//Will loop through each element in array. Each time checking
 		//if its a number or not and incrementing 'count' as appropriate
-		for (int i = 1; i <= textLength; i++)
+		for (int i = 1; i < textLength; i++)
 		{
-
 			//Loop works by always finding the non-number char.
 			if (!isNum(text[i]))
 			{
+				
 				//Once the non-number char is found you need to check
 				//if the previous char was a number; happens if there
 				//is a consecutive string of numbers such as "1234a".
