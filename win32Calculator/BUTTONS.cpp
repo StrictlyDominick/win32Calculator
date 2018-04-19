@@ -1446,14 +1446,17 @@ bool BUTTONS::CLICKED::Equal()
 	//Dynamically creates LPSTR for ID_EDIT
 	LPSTR editText = new char[editTextSize];
 
+	//Retrieves ID_EDIT text and stores in 'editText'
+	GetWindowText(editHandle, editText, editTextSize);
+
 	//Declares MATHPASER object for extracting math operators
 	//and numbers from char strings
 	MATHPARSER mathParser;
-	char temp[9] = { '1','2','t','3','4','d','2','s','2' };
-	//temp[7] = 6;
 
-	int counter = mathParser.countNumbers(temp, 9, true);
+	//Dynamically allocates array for storing all numbers to be calculated
+	int* workingSetNumbers = new int[mathParser.countNumbers(staticText, staticTextSize, true)];
 
+	delete[] workingSetNumbers;
 	delete [] staticText;
 	delete [] editText;
 
