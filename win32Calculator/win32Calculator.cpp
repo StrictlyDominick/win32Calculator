@@ -39,6 +39,9 @@
 		 ID_EDIT can't exceed the size of its container. Also allows 
 		 assumptions on the maximum size of the string contained in
 		 the text field.
+		-4-22-2018 7:11pm
+		 extractAllNumbers() function within MathPaser.cpp needs to be
+		 updated to include grabing numbers even when they are decimals
 
 **********************************************************************/
 

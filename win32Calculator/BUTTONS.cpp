@@ -1454,12 +1454,12 @@ bool BUTTONS::CLICKED::Equal()
 	MATHPARSER mathParser;
 
 	//sets the how many numbers are contained in 'staticText'
-	const int iTotalNumbers = mathParser.countNumbers((char*)"1234o6k57ok34", 13, true);
+	const int iTotalNumbers = mathParser.countNumbers(staticText, staticTextSize, true);
 
 	//Dynamically allocates array for storing all numbers to be calculated
 	int* iWorkingSetNumbers = new int[iTotalNumbers];
 
-	iWorkingSetNumbers = mathParser.extractAllNumbers((char*)"1234o6k57ok34", 13);
+	iWorkingSetNumbers = mathParser.extractAllNumbers(staticText, staticTextSize);
 
 	int check = -1;
 
