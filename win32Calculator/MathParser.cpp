@@ -31,25 +31,41 @@ double* MATHPARSER::extractAllNumbers(char* textToExtract, int textLength) const
 	//into workingSetNums in left to right order.
 	for (int i = 0; i < textLength; i++)
 	{
-		//when current position, 'i', is a number and a starting position has not
-		//been set than current position becomes starting position of new number.
-		//Starting position also occurs when a negative number is present. If 
-		//current position, 'i', is a '-' char while also followed by a number
-		//than current position becomes starting position of new number.
-		if ((isNum(textToExtract[i]) & (iPosition[0] == -1)) ||
-			((textToExtract[i] == '-') & (isNum(textToExtract[i+1]))))
+		//The following checks can only be done if 'i'+1 is less
+		//than the text array length. Prevents accessing an 
+		//dynamic array out of bounds.
+		if (i < (textLength - 1))
 		{
-			//stores the first position of number in string 'textToExtract'
-			iPosition[0] = i;
+			//when current position, 'i', is a number and a starting position has not
+			//been set than current position becomes starting position of new number.
+			//Starting position also occurs when a negative number is present. If 
+			//current position, 'i', is a '-' char while also followed by a number
+			//than current position becomes starting position of new number.
+			if ((isNum(textToExtract[i]) & (iPosition[0] == -1)) ||
+				((textToExtract[i] == '-') & (isNum(textToExtract[i + 1]))))
+			{
+				//stores the first position of number in string 'textToExtract'
+				iPosition[0] = i;
+
+				//jump to end of loop and increment char position
+				continue;
+			}
+			//When there is a decimal in current position 'i' check if there is 
+			//a number after decimal to know wither its a decimal number
+			else if (textToExtract[i] == '.' & iPosition[0] == -1 & isNum(textToExtract[i + 1]))
+			{
+				//stores the first position of number in string 'textToExtract'
+				iPosition[0] = i;
+
+				//jump to end of loop and increment char position
+				continue;
+			}
 		}
-		else if (textToExtract[i] == '.' & iPosition[0] == -1 & isNum(textToExtract[i+1]))
-		{
-			iPosition[0] = i;
-		}
+
 		//The last position of a number occurs when there is no longer a number after
 		//the starting position is set. This check must consider decimal character 
 		//as part of the number.
-		else if ((!isNum(textToExtract[i]) & textToExtract[i] != '.') & (iPosition[0] != -1))
+		if ((!isNum(textToExtract[i]) & textToExtract[i] != '.') & (iPosition[0] != -1))
 		{
 			iPosition[1] = i;
 
@@ -133,7 +149,7 @@ int MATHPARSER::countNumbers(char* text, int textLength, bool delimited) const
 			//its the case
 			else if (!isNum(text[i]))
 			{
-				
+
 				//Once the non-number char is found you need to check
 				//if the previous char was a number; happens if there
 				//is a consecutive string of numbers such as "1234a".
