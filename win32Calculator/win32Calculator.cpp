@@ -41,7 +41,7 @@
 		 the text field.
 		-4-22-2018 7:11pm
 		 extractAllNumbers() function within MathPaser.cpp needs to be
-		 updated to include grabbing numbers even when they are decimals
+		 updated to include grabing numbers even when they are decimals
 
 **********************************************************************/
 

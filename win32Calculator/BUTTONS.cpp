@@ -1457,11 +1457,11 @@ bool BUTTONS::CLICKED::Equal()
 	const int iTotalNumbers = mathParser.countNumbers(staticText, staticTextSize, true);
 
 	//Dynamically allocates array for storing all numbers to be calculated
-	double* iWorkingSetNumbers = new double[iTotalNumbers];
+	int* iWorkingSetNumbers = new int[iTotalNumbers];
 
 	iWorkingSetNumbers = mathParser.extractAllNumbers(staticText, staticTextSize);
 
-	double check = -1;
+	int check = -1;
 
 	for (int i = 0; i < iTotalNumbers; i++)
 	{

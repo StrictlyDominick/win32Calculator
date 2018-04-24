@@ -7,16 +7,13 @@
 #include "MathParser.h"
 #include <stdlib.h>
 
-double* MATHPARSER::extractAllNumbers(char* textToExtract, int textLength) const
+int* MATHPARSER::extractAllNumbers(char* textToExtract, int textLength) const
 {
 	//Retrieve amount of numbers in 'textToExtract'
 	const int AMOUNTOFNUMS = countNumbers(textToExtract, textLength);
 
-	//When there are no numbers found in 'textToExtract' will return nullptr
-	if (AMOUNTOFNUMS == 0) return nullptr;
-
 	//Dynamically creates pointer of size 'AMOUNTOFNUMS' for storing all numbers
-	double* workingSetNums = new double[AMOUNTOFNUMS];
+	int* workingSetNums = new int[AMOUNTOFNUMS];
 
 	//int array to store first and last position in string containing a number
 	int iPosition[2] = { -1,-1 };
@@ -42,14 +39,9 @@ double* MATHPARSER::extractAllNumbers(char* textToExtract, int textLength) const
 			//stores the first position of number in string 'textToExtract'
 			iPosition[0] = i;
 		}
-		else if (textToExtract[i] == '.' & iPosition[0] == -1 & isNum(textToExtract[i+1]))
-		{
-			iPosition[0] = i;
-		}
 		//The last position of a number occurs when there is no longer a number after
-		//the starting position is set. This check must consider decimal character 
-		//as part of the number.
-		else if ((!isNum(textToExtract[i]) & textToExtract[i] != '.') & (iPosition[0] != -1))
+		//the starting position is set.
+		else if (!isNum(textToExtract[i]) & iPosition[0] != -1)
 		{
 			iPosition[1] = i;
 
@@ -67,7 +59,7 @@ double* MATHPARSER::extractAllNumbers(char* textToExtract, int textLength) const
 			iPosition[1] = -1;
 
 			//convert character string to integer
-			workingSetNums[iUsed] = atof(tempString);
+			workingSetNums[iUsed] = atoi(tempString);
 
 			//defaults tempString
 			char tempString[] = { '+', '+', '+', '+', '+', '+', '+', '+', '+', '+' };
@@ -94,7 +86,7 @@ double* MATHPARSER::extractAllNumbers(char* textToExtract, int textLength) const
 			iPosition[1] = -1;
 
 			//convert character string to integer
-			workingSetNums[iUsed] = atof(tempString);
+			workingSetNums[iUsed] = atoi(tempString);
 
 			//defaults tempString
 			char tempString[] = { '+', '+', '+', '+', '+', '+', '+', '+', '+', '+' };
@@ -121,17 +113,8 @@ int MATHPARSER::countNumbers(char* text, int textLength, bool delimited) const
 		//if its a number or not and incrementing 'count' as appropriate
 		for (int i = 1; i < textLength; i++)
 		{
-			//When '.' character is present ensure that its
-			//part of a decimal number by checking the char
-			//after the '.' for a number
-			if (text[i] == '.' & isNum(text[i + 1]))
-			{
-				continue;
-			}
-			//When the character is not a number it could be
-			//the end of a number before it. This checks if
-			//its the case
-			else if (!isNum(text[i]))
+			//Loop works by always finding the non-number char.
+			if (!isNum(text[i]))
 			{
 				
 				//Once the non-number char is found you need to check
@@ -143,9 +126,6 @@ int MATHPARSER::countNumbers(char* text, int textLength, bool delimited) const
 					count++;
 				}
 			}
-			//When the last character in array is a number increment
-			//'count'. Added to solve problem where last number wasn't
-			//counted
 			else if ((i == (textLength - 1)) & isNum(text[i]))
 			{
 				//increment 'count'
