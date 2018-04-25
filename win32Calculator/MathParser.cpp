@@ -67,7 +67,7 @@ double* MATHPARSER::extractAllNumbers(char* textToExtract, int textLength) const
 		//as part of the number.
 		if ((!isNum(textToExtract[i]) & textToExtract[i] != '.') & (iPosition[0] != -1))
 		{
-			iPosition[1] = i;
+			iPosition[1] = i - 1;
 
 			//fill loop to fill 'tempString' with number from 'textToExtract'
 			for (int iTextPo = iPosition[0], iTempPo = 0; iTextPo <= iPosition[1]; iTextPo++, iTempPo++)
@@ -94,7 +94,7 @@ double* MATHPARSER::extractAllNumbers(char* textToExtract, int textLength) const
 		}
 		else if ((i == textLength - 1) & isNum(textToExtract[i]))
 		{
-			iPosition[1] = i;
+			iPosition[1] = i - 1;
 
 			//fill loop to fill 'tempString' with number from 'textToExtract'
 			for (int textPo = iPosition[0], tempPo = 0; textPo <= iPosition[1]; textPo++, tempPo++)
