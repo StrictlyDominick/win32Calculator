@@ -7,6 +7,11 @@
 #include "MathParser.h"
 #include <stdlib.h>
 
+char * MATHPARSER::extractAllOperations(char* textToExtract, int textLength) const
+{
+
+}
+
 double* MATHPARSER::extractAllNumbers(char* textToExtract, int textLength) const
 {
 	//Retrieve amount of numbers in 'textToExtract'
