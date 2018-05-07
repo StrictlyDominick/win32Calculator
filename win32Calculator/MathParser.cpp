@@ -194,6 +194,11 @@ int MATHPARSER::countNumbers(char* text, int textLength, bool delimited) const
 	return count;
 }
 
+int MATHPARSER::countOperations(char* text, int textLength) const
+{
+
+}
+
 bool MATHPARSER::isNum(char character) const
 {
 	//Checks all possible number char values against char
