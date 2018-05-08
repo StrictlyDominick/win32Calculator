@@ -9,7 +9,7 @@
 
 char * MATHPARSER::extractAllOperations(char* textToExtract, int textLength) const
 {
-
+	return nullptr;
 }
 
 double* MATHPARSER::extractAllNumbers(char* textToExtract, int textLength) const
@@ -57,7 +57,7 @@ double* MATHPARSER::extractAllNumbers(char* textToExtract, int textLength) const
 			}
 			//When there is a decimal in current position 'i' check if there is 
 			//a number after decimal to know wither its a decimal number
-			else if (textToExtract[i] == '.' & iPosition[0] == -1 & isNum(textToExtract[i + 1]))
+			else if ((textToExtract[i] == '.') & (iPosition[0] == -1) & (isNum(textToExtract[i + 1])))
 			{
 				//stores the first position of number in string 'textToExtract'
 				iPosition[0] = i;
@@ -196,7 +196,45 @@ int MATHPARSER::countNumbers(char* text, int textLength, bool delimited) const
 
 int MATHPARSER::countOperations(char* text, int textLength) const
 {
+	//Initialize counter for math operations
+	int counter = 0;
 
+	//Loop through chars in car array and count math operators
+	for (int i = 0; i < textLength; i++)
+	{
+		switch (text[i])
+		{
+		case '+':
+			counter++;
+			break;
+		case '*':
+			counter++;
+			break;
+		case '-':
+			counter++;
+			break;
+		case '÷':
+			counter++;
+			break;
+		case '/':
+			counter++;
+			break;
+		case 'x':
+			counter++;
+			break;
+		case '(':
+			counter++;
+			break;
+		case ')':
+			counter++;
+			break;
+		default:
+			break;
+		}
+	}
+
+	//return number of operations found
+	return counter;
 }
 
 bool MATHPARSER::isNum(char character) const
