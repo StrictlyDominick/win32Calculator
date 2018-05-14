@@ -4,7 +4,8 @@
 						ProfoundDisputes
 **********************************************************************/
 #include "BUTTONS.h"
-
+#include <cmath>
+#include <cstdio>
 
 //=====================================
 //============	CREATE  ===============
@@ -1461,14 +1462,22 @@ bool BUTTONS::CLICKED::Equal()
 
 	iWorkingSetNumbers = mathParser.extractAllNumbers(staticText, staticTextSize);
 
+	int found = mathParser.countOperations(staticText, staticTextSize);
+
 	double check = -1;
+
+	char* texts = new char[20];
+	snprintf(texts, 20, "% .10g", iWorkingSetNumbers[0]);
+	SetWindowText(editHandle, texts);
 
 	for (int i = 0; i < iTotalNumbers; i++)
 	{
-		check = iWorkingSetNumbers[i];
+		//check = iWorkingSetNumbers[0] * 1000000000000;
+		//check = round(check)=
+		//check = check / 1000000000000;
 	}
 
-	delete[] iWorkingSetNumbers;
+	delete [] iWorkingSetNumbers;
 	delete [] staticText;
 	delete [] editText;
 
