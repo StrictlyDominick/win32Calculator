@@ -1,7 +1,7 @@
 /********************************************************************
 						win32Calculator
 							  By
-						ProfoundDisputes
+						StrictlyDominick
 
 	Purpose:
 		A simple replication of the windows calculator. Basic
