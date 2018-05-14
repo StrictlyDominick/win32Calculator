@@ -1,7 +1,7 @@
 /********************************************************************
 					HEADER FILE - BUTTONS_H
 							Made By
-						ProfoundDisputes
+						StrictlyDomininck
 **********************************************************************/
 #include "BUTTONS.h"
 #include <cmath>

@@ -1,7 +1,7 @@
 /********************************************************************
 					HEADER FILE - MATHPARSER.h
 							Made By
-						ProfoundDisputes
+						StrictlyDominick
 **********************************************************************/
 
 #include "MathParser.h"
@@ -213,7 +213,7 @@ int MATHPARSER::countOperations(char* text, int textLength) const
 		case '-':
 			counter++;
 			break;
-		case '÷':
+		case 'Ã·':
 			counter++;
 			break;
 		case '/':
