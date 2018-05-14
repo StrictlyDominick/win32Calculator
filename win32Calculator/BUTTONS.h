@@ -1,7 +1,7 @@
 /********************************************************************
 							BUTTONS_H
 								By
-							ProfoundDisputes
+						  StrictlyDominick
 **********************************************************************/
 
 #pragma once
@@ -283,7 +283,7 @@ public:
 		//					<windows.h> HWND, CreateWindowEx()
 		bool ButtonMULTI(HWND parenthwnd);
 
-		//Creates '÷' (ID_BUTTONDIVISION) button on the calculator. ID_BUTTONEQUAL is required
+		//Creates 'Ã·' (ID_BUTTONDIVISION) button on the calculator. ID_BUTTONEQUAL is required
 		//to be created before hand. The position/size is based off of ID_BUTTONEQUAL. 
 		//This function will test to ensure that ID_BUTTONEQUAL has been created before
 		//attempting to create button. After ID_BUTTONDIVISION has been created it will set
