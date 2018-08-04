@@ -1465,7 +1465,7 @@ bool BUTTONS::CLICKED::Equal()
 
 	for (int i = 0; i < iTotalNumbers; i++)
 	{
-		check = iWorkingSetNumbers[i];
+		check = iWorkingSetNumbers[0] * iWorkingSetNumbers[1];
 	}
 
 	delete[] iWorkingSetNumbers;
