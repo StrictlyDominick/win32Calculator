@@ -1,11 +1,16 @@
 /********************************************************************
 					HEADER FILE - MATHPARSER.h
 							Made By
-						ProfoundDisputes
+						StrictlyDominick
 **********************************************************************/
 
 #include "MathParser.h"
 #include <stdlib.h>
+
+char * MATHPARSER::extractAllOperations(char* textToExtract, int textLength) const
+{
+	return nullptr;
+}
 
 double* MATHPARSER::extractAllNumbers(char* textToExtract, int textLength) const
 {
@@ -67,7 +72,7 @@ double* MATHPARSER::extractAllNumbers(char* textToExtract, int textLength) const
 		//as part of the number.
 		if ((!isNum(textToExtract[i])) & (textToExtract[i] != '.') & (iPosition[0] != -1))
 		{
-			iPosition[1] = i;
+			iPosition[1] = i - 1;
 
 			//fill loop to fill 'tempString' with number from 'textToExtract'
 			for (int iTextPo = iPosition[0], iTempPo = 0; iTextPo <= iPosition[1]; iTextPo++, iTempPo++)
@@ -94,7 +99,7 @@ double* MATHPARSER::extractAllNumbers(char* textToExtract, int textLength) const
 		}
 		else if ((i == textLength - 1) & isNum(textToExtract[i]))
 		{
-			iPosition[1] = i;
+			iPosition[1] = i - 1;
 
 			//fill loop to fill 'tempString' with number from 'textToExtract'
 			for (int textPo = iPosition[0], tempPo = 0; textPo <= iPosition[1]; textPo++, tempPo++)
@@ -187,6 +192,49 @@ int MATHPARSER::countNumbers(char* text, int textLength, bool delimited) const
 
 	//Return the tallied number of number char's found
 	return count;
+}
+
+int MATHPARSER::countOperations(char* text, int textLength) const
+{
+	//Initialize counter for math operations
+	int counter = 0;
+
+	//Loop through chars in car array and count math operators
+	for (int i = 0; i < textLength; i++)
+	{
+		switch (text[i])
+		{
+		case '+':
+			counter++;
+			break;
+		case '*':
+			counter++;
+			break;
+		case '-':
+			counter++;
+			break;
+		case '÷':
+			counter++;
+			break;
+		case '/':
+			counter++;
+			break;
+		case 'x':
+			counter++;
+			break;
+		case '(':
+			counter++;
+			break;
+		case ')':
+			counter++;
+			break;
+		default:
+			break;
+		}
+	}
+
+	//return number of operations found
+	return counter;
 }
 
 bool MATHPARSER::isNum(char character) const

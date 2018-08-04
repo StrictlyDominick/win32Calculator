@@ -1,7 +1,7 @@
 /********************************************************************
 						win32Calculator
 							  By
-						ProfoundDisputes
+						StrictlyDominick
 
 	Purpose:
 		A simple replication of the windows calculator. Basic
@@ -39,9 +39,10 @@
 		 ID_EDIT can't exceed the size of its container. Also allows 
 		 assumptions on the maximum size of the string contained in
 		 the text field.
-		-4-22-2018 7:11pm
-		 extractAllNumbers() function within MathPaser.cpp needs to be
-		 updated to include grabbing numbers even when they are decimals
+		-5-7-2018 12:15pm
+		 You can input a ')' before any '(' has been entered. This is
+		 not proper behavior. Implement code to only all ')' when there
+		 is a unclosed '(' present.
 
 **********************************************************************/
 
