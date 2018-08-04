@@ -52,7 +52,7 @@ double* MATHPARSER::extractAllNumbers(char* textToExtract, int textLength) const
 			}
 			//When there is a decimal in current position 'i' check if there is 
 			//a number after decimal to know wither its a decimal number
-			else if (textToExtract[i] == '.' & iPosition[0] == -1 & isNum(textToExtract[i + 1]))
+			else if ((textToExtract[i] == '.') & (iPosition[0] == -1) & (isNum(textToExtract[i + 1])))
 			{
 				//stores the first position of number in string 'textToExtract'
 				iPosition[0] = i;
@@ -65,7 +65,7 @@ double* MATHPARSER::extractAllNumbers(char* textToExtract, int textLength) const
 		//The last position of a number occurs when there is no longer a number after
 		//the starting position is set. This check must consider decimal character 
 		//as part of the number.
-		if ((!isNum(textToExtract[i]) & textToExtract[i] != '.') & (iPosition[0] != -1))
+		if ((!isNum(textToExtract[i])) & (textToExtract[i] != '.') & (iPosition[0] != -1))
 		{
 			iPosition[1] = i;
 
@@ -140,7 +140,7 @@ int MATHPARSER::countNumbers(char* text, int textLength, bool delimited) const
 			//When '.' character is present ensure that its
 			//part of a decimal number by checking the char
 			//after the '.' for a number
-			if (text[i] == '.' & isNum(text[i + 1]))
+			if ((text[i] == '.') & (isNum(text[i + 1])))
 			{
 				continue;
 			}
