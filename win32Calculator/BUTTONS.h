@@ -20,6 +20,29 @@ public:
 	class CREATE
 	{
 	public:
+		xyButton NumButtonsDetails[20] = {
+											{ 58,321,55,50 },
+											{ 1,269,55,50 },
+											{ 58,269,55,50 },
+											{ 115,269,55,50 },
+											{ 1,217,55,50 },
+											{ 58,217,55,50 },
+											{ 115,217,55,50 },
+											{ 1,165,55,50 },
+											{ 58,165,55,50 },
+											{ 115,165,55,50 },
+											{ 115,321,55,50 }, //DOT
+											{ 1,321,55,50 },   //CELAR
+											{ 115,113,55,50 }, //DEL
+											{ 172,269,55,50 }, //PLUS
+											{ 172,217,55,50 }, //MINUS
+											{ 172,165,55,50 }, //MULTI
+											{ 172,113,55,50 }, //DIVISION
+											{ 1,113,55,50 },   //LPARENTHESIS
+											{ 58,113,55,50 },  //RPARENTHESIS
+											{ 172,321,55,50 }  //EQUAL
+										 };
+
 		//Constructor:
 		//When parent class BUTTONS is initialize its constructor sends in '*this'
 		//to 'parentAddress'. This will allow BUTTONS object 'parentClass' to have
@@ -44,303 +67,7 @@ public:
 		//					BUTTONS: getButtonEqual(), setparentHwnd()
 		bool All(HWND parenthwnd);
 
-		//Creates '0' (ID_BUTTON0) button on the calculator. ID_BUTTONEQUAL is required
-		//to be created before hand. The position/size is based off of ID_BUTTONEQUAL. 
-		//This function will test to ensure that ID_BUTTONEQUAL has been created before
-		//attempting to create button. After ID_BUTTON0 has been created it will set
-		//bButton0 as true. Function will return 'true' if successful.
-		//PostCondition:	ID_BUTTON0 will be create in the parent window. bButton0
-		//					will be set to true if successful. Function will return true
-		//					if successful and false if unsuccessful.
-		//PreCondition :	ID_BUTTONEQUAL must be created before calling function.
-		//					The following member functions are used:
-		//					BUTTONS:    getButtonDimensions(), setButton0(), getButtonEQUAL()
-		//					ControlIDDefines: IDtoLPCSTR()
-		//					<windows.h> HWND, CreateWindowEx()
-		bool Button0(HWND parenthwnd);
-
-		//Creates '1' (ID_BUTTON1) button on the calculator. ID_BUTTONEQUAL is required
-		//to be created before hand. The position/size is based off of ID_BUTTONEQUAL. 
-		//This function will test to ensure that ID_BUTTONEQUAL has been created before
-		//attempting to create button. After ID_BUTTON1 has been created it will set
-		//bButton1 as true. Function will return 'true' if successful.
-		//PostCondition:	ID_BUTTON1 will be create in the parent window. bButton1
-		//					will be set to true if successful. Function will return true
-		//					if successful and false if unsuccessful.
-		//PreCondition :	ID_BUTTONEQUAL must be created before calling function.
-		//					The following member functions are used:
-		//					BUTTONS:  getButtonDimensions(), getButtonEQUAL(), setButton1()
-		//					ControlIDDefines: IDtoLPCSTR()
-		//					<windows.h> HWND, CreateWindowEx()
-		bool Button1(HWND parenthwnd);
-
-		//Creates '2' (ID_BUTTON2) button on the calculator. ID_BUTTONEQUAL is required
-		//to be created before hand. The position/size is based off of ID_BUTTONEQUAL. 
-		//This function will test to ensure that ID_BUTTONEQUAL has been created before
-		//attempting to create button. After ID_BUTTON2 has been created it will set
-		//bButton2 as true. Function will return 'true' if successful.
-		//PostCondition:	ID_BUTTON2 will be create in the parent window. bButton2
-		//					will be set to true if successful. Function will return true
-		//					if successful and false if unsuccessful.
-		//PreCondition :	ID_BUTTONEQUAL must be created before calling function.
-		//					The following member functions are used:
-		//					BUTTONS:  getButtonDimensions(), getButtonEQUAL(), setButton2()
-		//					ControlIDDefines: IDtoLPCSTR()
-		//					<windows.h> HWND, CreateWindowEx()
-		bool Button2(HWND parenthwnd);
-
-		//Creates '3' (ID_BUTTON3) button on the calculator. ID_BUTTONEQUAL is required
-		//to be created before hand. The position/size is based off of ID_BUTTONEQUAL. 
-		//This function will test to ensure that ID_BUTTONEQUAL has been created before
-		//attempting to create button. After ID_BUTTON3 has been created it will set
-		//bButton3 as true. Function will return 'true' if successful.
-		//PostCondition:	ID_BUTTON3 will be create in the parent window. bButton3
-		//					will be set to true if successful. Function will return true
-		//					if successful and false if unsuccessful.
-		//PreCondition :	ID_BUTTONEQUAL must be created before calling function.
-		//					The following member functions are used:
-		//					BUTTONS:  getButtonDimensions(), getButtonEQUAL(), setButton3()
-		//					ControlIDDefines: IDtoLPCSTR()
-		//					<windows.h> HWND, CreateWindowEx()
-		bool Button3(HWND parenthwnd);
-
-		//Creates '4' (ID_BUTTON4) button on the calculator. ID_BUTTONEQUAL is required
-		//to be created before hand. The position/size is based off of ID_BUTTONEQUAL. 
-		//This function will test to ensure that ID_BUTTONEQUAL has been created before
-		//attempting to create button. After ID_BUTTON4 has been created it will set
-		//bButton4 as true. Function will return 'true' if successful.
-		//PostCondition:	ID_BUTTON4 will be create in the parent window. bButton4
-		//					will be set to true if successful. Function will return true
-		//					if successful and false if unsuccessful.
-		//PreCondition :	ID_BUTTONEQUAL must be created before calling function.
-		//					The following member functions are used:
-		//					BUTTONS:  getButtonDimensions(), getButtonEQUAL(), setButton4()
-		//					ControlIDDefines: IDtoLPCSTR()
-		//					<windows.h> HWND, CreateWindowEx()
-		bool Button4(HWND parenthwnd);
-
-		//Creates '5' (ID_BUTTON5) button on the calculator. ID_BUTTONEQUAL is required
-		//to be created before hand. The position/size is based off of ID_BUTTONEQUAL. 
-		//This function will test to ensure that ID_BUTTONEQUAL has been created before
-		//attempting to create button. After ID_BUTTON5 has been created it will set
-		//bButton5 as true. Function will return 'true' if successful.
-		//PostCondition:	ID_BUTTON5 will be create in the parent window. bButton5
-		//					will be set to true if successful. Function will return true
-		//					if successful and false if unsuccessful.
-		//PreCondition :	ID_BUTTONEQUAL must be created before calling function.
-		//					The following member functions are used:
-		//					BUTTONS:  getButtonDimensions(), getButtonEQUAL(), setButton5()
-		//					ControlIDDefines: IDtoLPCSTR()
-		//					<windows.h> HWND, CreateWindowEx()
-		bool Button5(HWND parenthwnd);
-
-		//Creates '6' (ID_BUTTON6) button on the calculator. ID_BUTTONEQUAL is required
-		//to be created before hand. The position/size is based off of ID_BUTTONEQUAL. 
-		//This function will test to ensure that ID_BUTTONEQUAL has been created before
-		//attempting to create button. After ID_BUTTON6 has been created it will set
-		//bButton6 as true. Function will return 'true' if successful.
-		//PostCondition:	ID_BUTTON6 will be create in the parent window. bButton6
-		//					will be set to true if successful. Function will return true
-		//					if successful and false if unsuccessful.
-		//PreCondition :	ID_BUTTONEQUAL must be created before calling function.
-		//					The following member functions are used:
-		//					BUTTONS:  getButtonDimensions(), getButtonEQUAL(), setButton6()
-		//					ControlIDDefines: IDtoLPCSTR()
-		//					<windows.h> HWND, CreateWindowEx()
-		bool Button6(HWND parenthwnd);
-
-		//Creates '7' (ID_BUTTON7) button on the calculator. ID_BUTTONEQUAL is required
-		//to be created before hand. The position/size is based off of ID_BUTTONEQUAL. 
-		//This function will test to ensure that ID_BUTTONEQUAL has been created before
-		//attempting to create button. After ID_BUTTON7 has been created it will set
-		//bButton7 as true. Function will return 'true' if successful.
-		//PostCondition:	ID_BUTTON7 will be create in the parent window. bButton7
-		//					will be set to true if successful. Function will return true
-		//					if successful and false if unsuccessful.
-		//PreCondition :	ID_BUTTONEQUAL must be created before calling function.
-		//					The following member functions are used:
-		//					BUTTONS:  getButtonDimensions(), getButtonEQUAL(), setButton7()
-		//					ControlIDDefines: IDtoLPCSTR()
-		//					<windows.h> HWND, CreateWindowEx()
-		bool Button7(HWND parenthwnd);
-
-		//Creates '8' (ID_BUTTON8) button on the calculator. ID_BUTTONEQUAL is required
-		//to be created before hand. The position/size is based off of ID_BUTTONEQUAL. 
-		//This function will test to ensure that ID_BUTTONEQUAL has been created before
-		//attempting to create button. After ID_BUTTON8 has been created it will set
-		//bButton8 as true. Function will return 'true' if successful.
-		//PostCondition:	ID_BUTTON8 will be create in the parent window. bButton8
-		//					will be set to true if successful. Function will return true
-		//					if successful and false if unsuccessful.
-		//PreCondition :	ID_BUTTONEQUAL must be created before calling function.
-		//					The following member functions are used:
-		//					BUTTONS:  getButtonDimensions(), getButtonEQUAL(), setButton8()
-		//					ControlIDDefines: IDtoLPCSTR()
-		//					<windows.h> HWND, CreateWindowEx()
-		bool Button8(HWND parenthwnd);
-
-		//Creates '9' (ID_BUTTON9) button on the calculator. ID_BUTTONEQUAL is required
-		//to be created before hand. The position/size is based off of ID_BUTTONEQUAL. 
-		//This function will test to ensure that ID_BUTTONEQUAL has been created before
-		//attempting to create button. After ID_BUTTON9 has been created it will set
-		//bButton9 as true. Function will return 'true' if successful.
-		//PostCondition:	ID_BUTTON9 will be create in the parent window. bButton9
-		//					will be set to true if successful. Function will return true
-		//					if successful and false if unsuccessful.
-		//PreCondition :	ID_BUTTONEQUAL must be created before calling function.
-		//					The following member functions are used:
-		//					BUTTONS:  getButtonDimensions(), getButtonEQUAL(), setButton9()
-		//					ControlIDDefines: IDtoLPCSTR()
-		//					<windows.h> HWND, CreateWindowEx()
-		bool Button9(HWND parenthwnd);
-
-		//Creates '.' (ID_BUTTONDOT) button on the calculator. ID_BUTTONEQUAL is required
-		//to be created before hand. The position/size is based off of ID_BUTTONEQUAL. 
-		//This function will test to ensure that ID_BUTTONEQUAL has been created before
-		//attempting to create button. After ID_BUTTONDOT has been created it will set
-		//bButtonDOT as true. Function will return 'true' if successful.
-		//PostCondition:	ID_BUTTONDOT will be create in the parent window. bButtonDOT
-		//					will be set to true if successful. Function will return true
-		//					if successful and false if unsuccessful.
-		//PreCondition :	ID_BUTTONEQUAL must be created before calling function.
-		//					The following member functions are used:
-		//					BUTTONS:  getButtonDimensions(), getButtonEQUAL(), setButtonDOT()
-		//					ControlIDDefines: IDtoLPCSTR()
-		//					<windows.h> HWND, CreateWindowEx()
-		bool ButtonDOT(HWND parenthwnd);
-
-		//Creates 'CL' (ID_BUTTON0) button on the calculator. ID_BUTTONEQUAL is required
-		//to be created before hand. The position/size is based off of ID_BUTTONEQUAL. 
-		//This function will test to ensure that ID_BUTTONEQUAL has been created before
-		//attempting to create button. After ID_BUTTON0 has been created it will set
-		//bbuttonCLEAR as true. Function will return 'true' if successful.
-		//PostCondition:	ID_BUTTON0 will be create in the parent window. bbuttonCLEAR
-		//					will be set to true if successful. Function will return true
-		//					if successful and false if unsuccessful.
-		//PreCondition :	ID_BUTTONEQUAL must be created before calling function.
-		//					The following member functions are used:
-		//					BUTTONS:  getButtonDimensions(), getButtonEQUAL(), setbuttonCLEAR()
-		//					ControlIDDefines: IDtoLPCSTR()
-		//					<windows.h> HWND, CreateWindowEx()
-		bool ButtonCLEAR(HWND parenthwnd);
-
-		//Creates 'DEL' (ID_BUTTONDEL) button on the calculator. ID_BUTTONEQUAL is required
-		//to be created before hand. The position/size is based off of ID_BUTTONEQUAL. 
-		//This function will test to ensure that ID_BUTTONEQUAL has been created before
-		//attempting to create button. After ID_BUTTONDEL has been created it will set
-		//bButtonDEL as true. Function will return 'true' if successful.
-		//PostCondition:	ID_BUTTONDEL will be create in the parent window. bButtonDEL
-		//					will be set to true if successful. Function will return true
-		//					if successful and false if unsuccessful.
-		//PreCondition :	ID_BUTTONEQUAL must be created before calling function.
-		//					The following member functions are used:
-		//					BUTTONS:  getButtonDimensions(), getButtonEQUAL(), setButtonDEL()
-		//					ControlIDDefines: IDtoLPCSTR()
-		//					<windows.h> HWND, CreateWindowEx()
-		bool ButtonDEL(HWND parenthwnd);
-
-		//Creates '-' (ID_BUTTONMINUS) button on the calculator. ID_BUTTONEQUAL is required
-		//to be created before hand. The position/size is based off of ID_BUTTONEQUAL. 
-		//This function will test to ensure that ID_BUTTONEQUAL has been created before
-		//attempting to create button. After ID_BUTTONMINUS has been created it will set
-		//bButtonMINUS as true. Function will return 'true' if successful.
-		//PostCondition:	ID_BUTTONMINUS will be create in the parent window. bButtonMINUS
-		//					will be set to true if successful. Function will return true
-		//					if successful and false if unsuccessful.
-		//PreCondition :	ID_BUTTONEQUAL must be created before calling function.
-		//					The following member functions are used:
-		//					BUTTONS:  getButtonDimensions(), getButtonEQUAL(), setButtonMINUS()
-		//					ControlIDDefines: IDtoLPCSTR()
-		//					<windows.h> HWND, CreateWindowEx()
-		bool ButtonMINUS(HWND parenthwnd);
-
-		//Creates '+' (ID_BUTTONPLUS) button on the calculator. ID_BUTTONEQUAL is required
-		//to be created before hand. The position/size is based off of ID_BUTTONEQUAL. 
-		//This function will test to ensure that ID_BUTTONEQUAL has been created before
-		//attempting to create button. After ID_BUTTONPLUS has been created it will set
-		//bButtonPLUS as true. Function will return 'true' if successful.
-		//PostCondition:	ID_BUTTONPLUS will be create in the parent window. bButtonPLUS
-		//					will be set to true if successful. Function will return true
-		//					if successful and false if unsuccessful.
-		//PreCondition :	ID_BUTTONEQUAL must be created before calling function.
-		//					The following member functions are used:
-		//					BUTTONS:  getButtonDimensions(), getButtonEQUAL(), setButtonPLUS()
-		//					ControlIDDefines: IDtoLPCSTR()
-		//					<windows.h> HWND, CreateWindowEx()
-		bool ButtonPLUS(HWND parenthwnd);
-
-		//Creates 'X' (ID_BUTTONMULTI) button on the calculator. ID_BUTTONEQUAL is required
-		//to be created before hand. The position/size is based off of ID_BUTTONEQUAL. 
-		//This function will test to ensure that ID_BUTTONEQUAL has been created before
-		//attempting to create button. After ID_BUTTONMULTI has been created it will set
-		//bButtonMULTI as true. Function will return 'true' if successful.
-		//PostCondition:	ID_BUTTONMULTI will be create in the parent window. bButtonMULTI
-		//					will be set to true if successful. Function will return true
-		//					if successful and false if unsuccessful.
-		//PreCondition :	ID_BUTTONEQUAL must be created before calling function.
-		//					The following member functions are used:
-		//					BUTTONS:  getButtonDimensions(), getButtonEQUAL(), setButtonMULTI()
-		//					ControlIDDefines: IDtoLPCSTR()
-		//					<windows.h> HWND, CreateWindowEx()
-		bool ButtonMULTI(HWND parenthwnd);
-
-		//Creates '÷' (ID_BUTTONDIVISION) button on the calculator. ID_BUTTONEQUAL is required
-		//to be created before hand. The position/size is based off of ID_BUTTONEQUAL. 
-		//This function will test to ensure that ID_BUTTONEQUAL has been created before
-		//attempting to create button. After ID_BUTTONDIVISION has been created it will set
-		//bButtonDIVISION as true. Function will return 'true' if successful.
-		//PostCondition:	ID_BUTTONDIVISION will be create in the parent window. bButtonDIVISION
-		//					will be set to true if successful. Function will return true
-		//					if successful and false if unsuccessful.
-		//PreCondition :	ID_BUTTONEQUAL must be created before calling function.
-		//					The following member functions are used:
-		//					BUTTONS:  getButtonDimensions(), getButtonEQUAL(), setButtonDIVISION()
-		//					ControlIDDefines: IDtoLPCSTR()
-		//					<windows.h> HWND, CreateWindowEx()
-		bool ButtonDIVISION(HWND parenthwnd);
-
-		//Creates '=' (ID_BUTTONEQUAL) button on the calculator. ID_BUTTONEQUAL is used
-		//for all control button creations. Call this function first before
-		//attempting to create any other buttons. After ID_BUTTONEQUAL has been created
-		//it will set. bButtonEQUAL as true. Function will return 'true' if successful.
-		//PostCondition:	ID_BUTTONEQUAL will be create in the parent window. bButtonEQUAL
-		//					will be set to true if successful. Function will return true
-		//					if successful and false if unsuccessful.
-		//PreCondition :	The following member functions are used:
-		//					BUTTONS:  setButtonEQUAL()
-		//					ControlIDDefines: IDtoLPCSTR()
-		//					<windows.h> HWND, CreateWindowEx(), GetClientRect()
-		bool ButtonEQUAL(HWND parenthwnd);
-
-		//Creates '(' (ID_BUTTONLPARENTHESIS) button on the calculator. ID_BUTTONEQUAL is required
-		//to be created before hand. The position/size is based off of ID_BUTTONEQUAL. 
-		//This function will test to ensure that ID_BUTTONEQUAL has been created before
-		//attempting to create button. After ID_BUTTONLPARENTHESIS has been created it will set
-		//bButtonLPARENTHESIS as true. Function will return 'true' if successful.
-		//PostCondition:	ID_BUTTONLPARENTHESIS will be create in the parent window. bButtonLPARENTHESIS
-		//					will be set to true if successful. Function will return true
-		//					if successful and false if unsuccessful.
-		//PreCondition :	ID_BUTTONEQUAL must be created before calling function.
-		//					The following member functions are used:
-		//					BUTTONS:  getButtonDimensions(), getButtonEQUAL(), setButtonLPARENTHESIS()
-		//					ControlIDDefines: IDtoLPCSTR()
-		//					<windows.h> HWND, CreateWindowEx()
-		bool ButtonLPARENTHESIS(HWND parenthwnd);
-
-		//Creates ')' (ID_BUTTONRPARENTHESIS) button on the calculator. ID_BUTTONEQUAL is required
-		//to be created before hand. The position/size is based off of ID_BUTTONEQUAL. 
-		//This function will test to ensure that ID_BUTTONEQUAL has been created before
-		//attempting to create button. After ID_BUTTONRPARENTHESIS has been created it will set
-		//bButtonRPARENTHESIS as true. Function will return 'true' if successful.
-		//PostCondition:	ID_BUTTONRPARENTHESIS will be create in the parent window. bButtonRPARENTHESIS
-		//					will be set to true if successful. Function will return true
-		//					if successful and false if unsuccessful.
-		//PreCondition :	ID_BUTTONEQUAL must be created before calling function.
-		//					The following member functions are used:
-		//					BUTTONS:  getButtonDimensions(), getButtonEQUAL(), setButtonRPARENTHESIS()
-		//					ControlIDDefines: IDtoLPCSTR()
-		//					<windows.h> HWND, CreateWindowEx()
-		bool ButtonRPARENTHESIS(HWND parenthwnd);
+		bool ButtonNum(int buttonID, HWND parenthwnd);
 
 		private:
 			BUTTONS & parentClass;
@@ -456,26 +183,7 @@ public:
 	//---------------------------------------
 	HWND getparentHwnd() const;
 
-	bool getButton0() const;
-	bool getButton1() const;
-	bool getButton2() const;
-	bool getButton3() const;
-	bool getButton4() const;
-	bool getButton5() const;
-	bool getButton6() const;
-	bool getButton7() const;
-	bool getButton8() const;
-	bool getButton9() const;
-	bool getButtonMINUS() const;
-	bool getButtonPLUS() const;
-	bool getButtonMULTI() const;
-	bool getButtonDIVISION() const;
-	bool getButtonEQUAL() const;
-	bool getButtonDOT() const;
-	bool getButtonCLEAR() const;
-	bool getButtonDEL() const;
-	bool getButtonLPARENTHESIS() const;
-	bool getButtonRPARENTHESIS() const;
+	bool getButtonCreated(int buttonID) const;
 
 	int getiLastButtontClicked() const;
 
@@ -489,26 +197,7 @@ public:
 	//---------------------------------------
 	void setparentHwnd(HWND theParentHandle);
 
-	void setButton0(bool value);
-	void setButton1(bool value);
-	void setButton2(bool value);
-	void setButton3(bool value);
-	void setButton4(bool value);
-	void setButton5(bool value);
-	void setButton6(bool value);
-	void setButton7(bool value);
-	void setButton8(bool value);
-	void setButton9(bool value);
-	void setButtonMINUS(bool value);
-	void setButtonPLUS(bool value);
-	void setButtonMULTI(bool value);
-	void setButtonDIVISION(bool value);
-	void setButtonDOT(bool value);
-	void setButtonEQUAL(bool value);
-	void setButtonCLEAR(bool value);
-	void setButtonDEL(bool value);
-	void setButtonLPARENTHESIS(bool value);
-	void setButtonRPARENTHESIS(bool value);
+	void setButtonCreated(int button_to_set, bool value);
 
 	bool setiLastButtonClicked(int buttonID);
 
