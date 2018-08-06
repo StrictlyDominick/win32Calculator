@@ -12,38 +12,38 @@
 //=====================================
 bool BUTTONS::CREATE::All(HWND parenthwnd)
 {
-	parentClass.Create.ButtonNum(ID_BUTTONEQUAL, parenthwnd);
+	parentClass.Create.Button(ID_BUTTONEQUAL, parenthwnd);
 
 	//Creates top row (row 1) of buttons from left to right
-	parentClass.Create.ButtonNum(ID_BUTTONLPARENTHESIS, parenthwnd);
-	parentClass.Create.ButtonNum(ID_BUTTONRPARENTHESIS, parenthwnd);
-	parentClass.Create.ButtonNum(ID_BUTTONDEL, parenthwnd);
-	parentClass.Create.ButtonNum(ID_BUTTONDIVISION, parenthwnd);
+	parentClass.Create.Button(ID_BUTTONLPARENTHESIS, parenthwnd);
+	parentClass.Create.Button(ID_BUTTONRPARENTHESIS, parenthwnd);
+	parentClass.Create.Button(ID_BUTTONDEL, parenthwnd);
+	parentClass.Create.Button(ID_BUTTONDIVISION, parenthwnd);
 
 	//Creates row 2 of buttons from left to right
-	parentClass.Create.ButtonNum(ID_BUTTON7, parenthwnd);
-	parentClass.Create.ButtonNum(ID_BUTTON8, parenthwnd);
-	parentClass.Create.ButtonNum(ID_BUTTON9, parenthwnd);
-	parentClass.Create.ButtonNum(ID_BUTTONMULTI, parenthwnd);
+	parentClass.Create.Button(ID_BUTTON7, parenthwnd);
+	parentClass.Create.Button(ID_BUTTON8, parenthwnd);
+	parentClass.Create.Button(ID_BUTTON9, parenthwnd);
+	parentClass.Create.Button(ID_BUTTONMULTI, parenthwnd);
 
 	//Creates row 3 of buttons from left to right
-	parentClass.Create.ButtonNum(ID_BUTTON4, parenthwnd);
-	parentClass.Create.ButtonNum(ID_BUTTON5, parenthwnd);
-	parentClass.Create.ButtonNum(ID_BUTTON6, parenthwnd);
-	parentClass.Create.ButtonNum(ID_BUTTONMINUS, parenthwnd);
+	parentClass.Create.Button(ID_BUTTON4, parenthwnd);
+	parentClass.Create.Button(ID_BUTTON5, parenthwnd);
+	parentClass.Create.Button(ID_BUTTON6, parenthwnd);
+	parentClass.Create.Button(ID_BUTTONMINUS, parenthwnd);
 
 	//Creates row 4 of buttons from left to right
-	parentClass.Create.ButtonNum(ID_BUTTON1, parenthwnd);
-	parentClass.Create.ButtonNum(ID_BUTTON2, parenthwnd);
-	parentClass.Create.ButtonNum(ID_BUTTON3, parenthwnd);
-	parentClass.Create.ButtonNum(ID_BUTTONPLUS, parenthwnd);
+	parentClass.Create.Button(ID_BUTTON1, parenthwnd);
+	parentClass.Create.Button(ID_BUTTON2, parenthwnd);
+	parentClass.Create.Button(ID_BUTTON3, parenthwnd);
+	parentClass.Create.Button(ID_BUTTONPLUS, parenthwnd);
 
 	//Creates row 5 of buttons from left to right
 	//Except ButtonEQUAL since its used as a position
 	//reference for all buttons it was created first
-	parentClass.Create.ButtonNum(ID_BUTTONCLEAR, parenthwnd);
-	parentClass.Create.ButtonNum(ID_BUTTON0, parenthwnd);
-	parentClass.Create.ButtonNum(ID_BUTTONDOT, parenthwnd);
+	parentClass.Create.Button(ID_BUTTONCLEAR, parenthwnd);
+	parentClass.Create.Button(ID_BUTTON0, parenthwnd);
+	parentClass.Create.Button(ID_BUTTONDOT, parenthwnd);
 
 	//stores the parent handle in object member
 	parentClass.setparentHwnd(parenthwnd);
@@ -52,7 +52,7 @@ bool BUTTONS::CREATE::All(HWND parenthwnd)
 	return true;
 }
 
-bool BUTTONS::CREATE::ButtonNum(int buttonID, HWND parenthwnd)
+bool BUTTONS::CREATE::Button(int buttonID, HWND parenthwnd)
 {
 	//------Variable Decelerations------
 	HWND buttonHandle;

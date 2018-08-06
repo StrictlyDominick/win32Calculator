@@ -67,7 +67,7 @@ public:
 		//					BUTTONS: getButtonEqual(), setparentHwnd()
 		bool All(HWND parenthwnd);
 
-		bool ButtonNum(int buttonID, HWND parenthwnd);
+		bool Button(int buttonID, HWND parenthwnd);
 
 		private:
 			BUTTONS & parentClass;
